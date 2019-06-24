@@ -33,12 +33,12 @@ now = datetime.datetime.now()
 
 
 #Args
-parser.add_option("-u", "--username", dest="username",help="Choose the username")
-parser.add_option("--usernamesel", dest="usernamesel",help="Choose the username selector")
-parser.add_option("--passsel", dest="passsel",help="Choose the password selector")
-parser.add_option("--loginsel", dest="loginsel",help= "Choose the login button selector")
-parser.add_option("--passlist", dest="passlist",help="Enter the password list directory")
-parser.add_option("--website", dest="website",help="choose a website")
+parser.add_option("-u", "--username", dest="username", help="Choose the username")
+parser.add_option("--usernamesel", dest="usernamesel", help="Choose the username selector")
+parser.add_option("--passsel", dest="passsel", help="Choose the password selector")
+parser.add_option("--loginsel", dest="loginsel", help= "Choose the login button selector")
+parser.add_option("--passlist", dest="passlist", help="Enter the password list directory")
+parser.add_option("--website", dest="website", help="choose a website")
 (options, args) = parser.parse_args()
 
 
@@ -74,7 +74,7 @@ def wizard():
     pass_list = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
     brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website)
 
-def brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website):
+def brutes(username, username_selector, password_selector,login_btn_selector, pass_list, website):
     f = open(pass_list, 'r')
     driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
@@ -141,7 +141,7 @@ login_btn_selector = options.loginsel
 website = options.website
 pass_list = options.passlist
 print banner
-brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website)
+brutes(username, username_selector, password_selector, login_btn_selector, pass_list, website)
 
 
 
